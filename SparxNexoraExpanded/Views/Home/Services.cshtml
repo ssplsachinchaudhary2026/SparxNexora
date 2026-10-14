@@ -1,0 +1,20 @@
+@{ViewData["Title"]="Services";}
+<section class="inner-hero"><div><span class="eyebrow">SERVICES / END-TO-END</span><h1>Digital services built for <em>real business.</em></h1><p>From websites and software to AI, apps, cloud, SEO and advertising, choose one service or combine them into a complete digital solution.</p></div><div class="inner-visual"><img src="~/images/svc-web.svg" alt=""/></div></section>
+<section class="section"><div class="detail-grid">
+@foreach (var s in new[]{
+("Website Development","Corporate websites, landing pages, CMS, portals and custom web applications.","ASP.NET Core · React · Angular · JavaScript · PHP"),
+("Custom Software Development","Business-specific platforms, dashboards, workflow systems, CRM/ERP modules and automation.",".NET · C# · Java · Python · SQL · REST APIs"),
+("Mobile App Development","Android, iOS and cross-platform apps designed around real user journeys.","Flutter · Android · Kotlin · Java · React Native · APIs"),
+("AI Development","Practical AI for assistants, search, automation, document workflows, recommendations and analytics.","Python · ML · LLM APIs · RAG · Vector DB · Cloud"),
+("E-Commerce","Stores with catalogues, checkout, payment integration, inventory, coupons and admin tools.","Shopify · WooCommerce · PHP · .NET · SQL"),
+("API & Integrations","REST APIs, authentication, payment gateways, third-party integrations, webhooks and data exchange.","ASP.NET Web API · Node.js · Python · JWT · OAuth"),
+("UI/UX Design","Wireframes, high-fidelity interfaces, design systems and responsive product experiences.","Figma · Design Systems · Prototyping · Accessibility"),
+("SEO & Analytics","Technical SEO, on-page optimisation, Search Console, Analytics, structured data and reporting.","SEO · GA4 · Search Console · Schema · Performance"),
+("Google & Meta Ads","Campaign planning, conversion tracking, audiences, creative direction and optimisation.","Google Ads · Meta Ads · Analytics · Tracking"),
+("Cloud & DevOps","Deployment, hosting, CI/CD, containers, monitoring and production support.","Azure · AWS · Docker · IIS · Linux · GitHub")
+}) {<article class="detail-card reveal"><span class="service-number">01</span><h2>@s.Item1</h2><p>@s.Item2</p><div class="stack">@s.Item3</div><a class="text-link" asp-action="Contact">Discuss this service →</a></article>}
+</div></section>
+@await Html.PartialAsync("_Showcase")
+@await Html.PartialAsync("_Commitments")
+@await Html.PartialAsync("_Engagement")
+@await Html.PartialAsync("_Cta")

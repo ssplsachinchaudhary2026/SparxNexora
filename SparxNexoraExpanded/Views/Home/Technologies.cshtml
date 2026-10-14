@@ -1,0 +1,20 @@
+@{ViewData["Title"]="Technology Stack";}
+<section class="inner-hero"><div><span class="eyebrow">TECHNOLOGY / OUR STACK</span><h1>The right technology for <em>the right problem.</em></h1><p>We work across multiple programming languages, frameworks, databases, cloud platforms and marketing tools. The project decides the stack.</p></div><div class="inner-visual"><img src="~/images/svc-cloud.svg" alt=""/></div></section>
+<section class="section"><div class="tech-categories">
+@foreach (var c in new[]{
+("Programming Languages",new[]{"C#","C","C++","Java","Python","JavaScript","TypeScript","PHP","SQL"}),
+("Frontend",new[]{"HTML5","CSS3","JavaScript","Bootstrap","Tailwind CSS","jQuery","React","Angular","Vue.js","Next.js"}),
+("Backend & Full Stack",new[]{"ASP.NET Core",".NET MVC","Web API","Django","Spring Boot","Node.js","Laravel","Golang"}),
+("Mobile",new[]{"Flutter","Android","Kotlin","Java","React Native","Swift"}),
+("Databases",new[]{"SQL Server","MySQL","PostgreSQL","MongoDB","SQLite","Redis"}),
+("Cloud & DevOps",new[]{"Azure","AWS","Google Cloud","Docker","IIS","Linux","Git","GitHub","CI/CD"}),
+("AI & Data",new[]{"Python","Pandas","NumPy","Scikit-learn","TensorFlow","PyTorch","LLM APIs","RAG","Vector Databases"}),
+("CMS & Commerce",new[]{"Umbraco","WordPress","Shopify","WooCommerce","Magento","OpenCart"}),
+("Marketing & Analytics",new[]{"SEO","Google Ads","Meta Ads","GA4","Search Console","Tag Manager"})
+}) {<article class="tech-category reveal"><div class="category-icon">✦</div><h2>@c.Item1</h2><div class="tech-tags">@foreach(var t in c.Item2){<span>@t</span>}</div></article>}
+</div></section>
+<section class="section dark-section"><div class="section-head"><span class="eyebrow">HOW WE CHOOSE</span><h2>Technology follows <em>your goals.</em></h2></div><div class="three-columns"><div><h3>Performance</h3><p>We select architectures that can handle the expected traffic, data and workflows.</p></div><div><h3>Maintainability</h3><p>Clear structure and familiar technologies make future changes easier.</p></div><div><h3>Scalability</h3><p>We keep a path open for integrations, new features, cloud growth and automation.</p></div></div></section>
+@await Html.PartialAsync("_Showcase")
+@await Html.PartialAsync("_Engagement")
+@await Html.PartialAsync("_Commitments")
+@await Html.PartialAsync("_Cta")

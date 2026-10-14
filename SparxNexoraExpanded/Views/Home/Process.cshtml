@@ -1,0 +1,27 @@
+@{ViewData["Title"]="How We Work";}
+<section class="inner-hero"><div><span class="eyebrow">PROCESS / DELIVERY</span><h1>From idea to launch, <em>step by step.</em></h1><p>A clear process keeps scope, communication and quality visible throughout the project.</p></div><div class="inner-visual"><img src="~/images/team-launch.svg" alt=""/></div></section>
+<section class="section"><div class="process-detail">
+@foreach (var x in new[]
+{
+    ("01", "Discovery", "We understand the business problem, users, existing systems, desired features, integrations and success criteria."),
+    ("02", "Planning", "We convert requirements into scope, milestones, architecture, technology choices and delivery priorities."),
+    ("03", "UI/UX Design", "We map journeys, create wireframes and build polished responsive interfaces before development is locked in."),
+    ("04", "Development", "Frontend, backend, APIs, database and integrations are built in small, reviewable increments."),
+    ("05", "Quality Assurance", "We test functionality, responsive behaviour, validation, integrations, performance and important security paths."),
+    ("06", "Deployment", "We configure production hosting, domain, SSL, environment settings, database and monitoring."),
+    ("07", "SEO & Growth", "We improve technical SEO, analytics, conversion paths and launch campaigns where required."),
+    ("08", "Support", "After launch, we can continue with maintenance, updates, optimisation and new features.")
+})
+{
+    <article class="process-row reveal">
+        <b>@x.Item1</b>
+        <div>
+            <h2>@x.Item2</h2>
+            <p>@x.Item3</p>
+        </div>
+    </article>
+}
+</div></section>
+@await Html.PartialAsync("_Commitments")
+@await Html.PartialAsync("_Engagement")
+@await Html.PartialAsync("_Cta")

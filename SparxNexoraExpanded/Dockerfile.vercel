@@ -1,0 +1,20 @@
+# Stage 1: Build environment
+FROM ://microsoft.com AS build
+WORKDIR /src
+
+# Copy project file and restore dependencies
+COPY ["SparxNexora.csproj", "./"]
+RUN dotnet restore "SparxNexora.csproj"
+
+# Copy everything else and build the release
+COPY . .
+RUN dotnet publish "SparxNexora.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+# Stage 2: Optimized Runtime environment
+FROM ://microsoft.com AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Expose port and declare execution command
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "SparxNexora.dll"]

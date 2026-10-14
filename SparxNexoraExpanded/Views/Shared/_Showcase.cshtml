@@ -1,0 +1,3 @@
+<section class="section"><div class="section-head reveal"><span class="eyebrow">WHAT WE CRAFT</span><h2>Crafted with <em>detail & depth.</em></h2></div><div class="showcase">
+@foreach(var c in new[]{("svc-web","Websites & Portals","Fast, responsive & SEO-ready"),("svc-app","Mobile Apps","Android, iOS & cross-platform"),("svc-ai","AI & Automation","Smart workflows that save time"),("svc-seo","SEO & Growth","Search, analytics & campaigns"),("svc-cloud","Cloud & DevOps","Secure deployment & monitoring"),("svc-ux","UI/UX Design","Interfaces people enjoy using")}){<a class="show-card reveal" asp-action="Services"><img src="~/images/@(c.Item1).svg" alt="@c.Item2"/><div><b>@c.Item2</b><span>@c.Item3</span></div></a>}
+</div></section>

@@ -1,0 +1,18 @@
+@{ViewData["Title"]="Industries";}
+<section class="inner-hero"><div><span class="eyebrow">INDUSTRIES / SOLUTIONS</span><h1>Software shaped around <em>your industry.</em></h1><p>Different businesses have different workflows. We adapt product structure, integrations and UX around the way your team actually works.</p></div><div class="inner-visual"><img src="~/images/svc-seo.svg" alt=""/></div></section>
+<section class="section"><div class="industry-detail-grid">
+@foreach(var x in new[]{
+("Travel & Hospitality","Booking engines, travel portals, inventory workflows, customer dashboards and API integrations."),
+("Healthcare","Patient-facing portals, appointments, internal workflows, secure data and operational dashboards."),
+("Education","LMS platforms, student portals, course systems, assessments, payments and reporting."),
+("FinTech & Finance","Customer portals, payment workflows, dashboards, reporting and integration-heavy platforms."),
+("Real Estate","Property listings, lead management, agent dashboards, enquiries and business automation."),
+("Retail & E-Commerce","Catalogues, stores, order management, inventory, marketing and analytics."),
+("Logistics & Transport","Booking, dispatch, tracking, fleet workflows, operations dashboards and APIs."),
+("Startups & SaaS","MVPs, SaaS platforms, admin panels, subscription workflows and product analytics."),
+("Restaurants & Local Business","Websites, online ordering, booking, lead capture, SEO and local marketing.")
+}) {<article class="industry-detail reveal"><span>CASE AREA</span><h2>@x.Item1</h2><p>@x.Item2</p><a asp-action="Contact">Discuss your use case →</a></article>}
+</div></section>
+@await Html.PartialAsync("_Commitments")
+@await Html.PartialAsync("_Showcase")
+@await Html.PartialAsync("_Cta")
