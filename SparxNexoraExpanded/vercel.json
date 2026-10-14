@@ -1,6 +1,11 @@
 {
   "version": 2,
- 
+ "services": [
+    {
+      "src": "Dockerfile.vercel",
+      "runtime": "container"
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
